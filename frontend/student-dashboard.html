@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Student dashboard – CampusHire</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header id="site-header"></header>
+<main class="wrap">
+  <h1>Student dashboard</h1>
+  <div class="summary">
+    <div><b id="n-total">0</b><span>Applications</span></div>
+    <div><b id="n-short">0</b><span>Shortlisted</span></div>
+    <div><b id="n-sel">0</b><span>Selected</span></div>
+  </div>
+  <section class="panel">
+    <h2>My profile</h2>
+    <p id="profile-note" class="hint"></p>
+    <form id="profile">
+      <div class="grid2">
+        <label>Roll number<input name="roll_number" required></label>
+        <label>Department<input name="department" placeholder="CSE, IT, ECE..." required></label>
+      </div>
+      <div class="grid2">
+        <label>CGPA<input name="cgpa" type="number" step=".01" min="0" max="10" required></label>
+        <label>Backlogs<input name="backlogs" type="number" min="0" value="0" required></label>
+      </div>
+      <label>Skills<textarea name="skills" placeholder="Python, Django, SQL"></textarea></label>
+      <label>Resume (PDF, max 2 MB)<input name="resume" type="file" accept="application/pdf"><span id="resume-link" class="hint"></span></label>
+      <button class="btn">Save profile</button>
+    </form>
+    <p id="msg"></p>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>My applications</h2><a href="jobs.html">Find jobs →</a></div>
+    <div id="apps"></div>
+  </section>
+</main>
+<script src="js/api.js"></script><script src="js/student.js"></script>
+</body></html>

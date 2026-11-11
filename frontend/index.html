@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CampusHire – Campus placement portal</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header id="site-header"></header>
+<main>
+  <section class="hero">
+    <p class="tag">SMART CAMPUS PLACEMENT PLATFORM</p>
+    <h1>Your career starts here.</h1>
+    <p>Discover opportunities, check eligibility instantly and track your placement journey from application to offer.</p>
+    <div class="actions">
+      <a class="btn" href="register.html">Get started</a>
+      <a class="btn ghost" href="jobs.html">Browse jobs</a>
+    </div>
+    <div class="stats"><div><b id="n-jobs">–</b>open jobs</div><div><b id="n-companies">–</b>companies</div></div>
+  </section>
+  <section class="section">
+    <h2>How CampusHire works</h2>
+    <div class="features">
+      <div class="feature"><div class="icon">🎓</div><h3>Students</h3><p>Create your profile with CGPA, department, skills and resume. See only the jobs you are eligible for and apply in one click.</p></div>
+      <div class="feature"><div class="icon">🏢</div><h3>Recruiters</h3><p>Register your company, post jobs with eligibility rules and review applicants with their academic details.</p></div>
+      <div class="feature"><div class="icon">📊</div><h3>Track progress</h3><p>Follow every application: applied, shortlisted, selected or rejected, updated live by recruiters.</p></div>
+    </div>
+  </section>
+</main>
+<footer>CampusHire · Django REST Framework + HTML/CSS/JavaScript</footer>
+<script src="js/api.js"></script>
+<script>
+request("/api/jobs/").then(j=>document.getElementById("n-jobs").textContent=j.length).catch(()=>{});
+request("/api/companies/").then(c=>document.getElementById("n-companies").textContent=c.length).catch(()=>{});
+</script>
+</body></html>

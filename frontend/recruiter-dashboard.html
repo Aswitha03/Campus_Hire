@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Recruiter dashboard – CampusHire</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header id="site-header"></header>
+<main class="wrap">
+  <h1>Recruiter dashboard</h1>
+  <div class="summary">
+    <div><b id="n-jobs">0</b><span>Jobs posted</span></div>
+    <div><b id="n-apps">0</b><span>Applicants</span></div>
+  </div>
+
+  <section class="panel">
+    <h2>My companies</h2>
+    <div id="company-list"></div>
+    <details style="margin-top:14px"><summary><b>+ Add company</b></summary>
+      <form id="company-form" style="margin-top:12px">
+        <label>Company name<input name="name" required></label>
+        <label>Website<input name="website" type="url" placeholder="https://"></label>
+        <label>Description<textarea name="description"></textarea></label>
+        <button class="btn">Create company</button>
+      </form>
+    </details>
+  </section>
+
+  <section class="panel">
+    <h2>Post a job</h2>
+    <form id="job-form">
+      <div class="grid2">
+        <label>Company<select name="company" id="job-company" required></select></label>
+        <label>Job title<input name="title" required></label>
+      </div>
+      <label>Description<textarea name="description" required></textarea></label>
+      <div class="grid3">
+        <label>Location<input name="location"></label>
+        <label>Package (LPA)<input name="package_lpa" type="number" step=".01" min="0" value="0" required></label>
+        <label>Max backlogs<input name="maximum_backlogs" type="number" min="0" value="0" required></label>
+      </div>
+      <div class="grid3">
+        <label>Minimum CGPA<input name="minimum_cgpa" type="number" step=".01" min="0" max="10" value="0" required></label>
+        <label>Eligible departments<input name="eligible_departments" placeholder="CSE,IT (or ALL)" required></label>
+        <label>Required skills<input name="required_skills" placeholder="Python, SQL"></label>
+      </div>
+      <button class="btn">Post job</button>
+    </form>
+  </section>
+
+  <section class="panel"><h2>My jobs</h2><div id="job-list"></div></section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Applicants</h2><select id="filter-job" style="width:auto"></select></div>
+    <div id="applicants"></div>
+  </section>
+</main>
+<script src="js/api.js"></script><script src="js/recruiter.js"></script>
+</body></html>

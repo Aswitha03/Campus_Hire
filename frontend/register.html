@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Register – CampusHire</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header id="site-header"></header>
+<main class="form">
+  <h1>Create account</h1>
+  <form id="register">
+    <label>Username<input name="username" required></label>
+    <label>Email<input name="email" type="email" required></label>
+    <label>Password<input name="password" type="password" minlength="8" required><span class="hint">At least 8 characters</span></label>
+    <label>I am a<select name="role"><option value="student">Student</option><option value="recruiter">Recruiter</option></select></label>
+    <button class="btn">Register</button>
+  </form>
+  <p id="msg"></p>
+  <a href="login.html">Already have an account? Login</a>
+</main>
+<script src="js/api.js"></script><script src="js/auth.js"></script>
+</body></html>
